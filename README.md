@@ -329,10 +329,11 @@ p.my-large-italic {
 Второй, более предпочтительный, вариант - описание CSS стилей в отдельном файле, подключить который к HTML-документу можно сославшись на него в секции `head`:
 
 ```html
-<head> 
-  <title>калькулятор</title>
-  <!-- указываем, что файл style.css содержит таблицу стилей (stylesheet) -->
-  <link rel="stylesheet" href="style.css"> 
+
+<head>
+   <title>калькулятор</title>
+   <!-- указываем, что файл style.css содержит таблицу стилей (stylesheet) -->
+   <link rel="stylesheet" href="basic/css/style.css">
 </head>
 ```
 
