@@ -1,4 +1,4 @@
-# ЛР 1. Calculator.JavaScript
+# ЛР 2. Calculator.JavaScript
 
 **Кострыкина Екатерина ИУ5-44Б**
 
