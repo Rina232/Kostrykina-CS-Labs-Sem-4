@@ -1,0 +1,23 @@
+{
+  "name": "kostrykina-cs-labs-sem-4",
+  "version": "1.0.0",
+  "description": "**Кострыкина Екатерина ИУ5-44Б**",
+  "homepage": "https://github.com/Rina232/Kostrykina-CS-Labs-Sem-4#readme",
+  "bugs": {
+    "url": "https://github.com/Rina232/Kostrykina-CS-Labs-Sem-4/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rina232/Kostrykina-CS-Labs-Sem-4.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  }
+}

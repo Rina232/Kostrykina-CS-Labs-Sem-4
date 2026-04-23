@@ -65,16 +65,6 @@ body.dark-theme header {
     transform: scale(0.95);
 }
 
-.logo {
-    margin-left: 25px;
-    margin-right: 40px;
-    transition: transform 0.2s;
-}
-
-.logo:hover {
-    transform: scale(1.1);
-}
-
 .header-menu a {
     color: rgb(0, 31, 82);
     font-size: 20px;
@@ -107,6 +97,10 @@ body.dark-theme .header-menu a:hover {
     margin-left: 15px;
     color: rgb(0, 31, 82);
     transition: background-color 0.3s, transform 0.3s;
+}
+
+.end-href {
+    margin-right: 80px;
 }
 
 .button-menu:hover {
@@ -423,8 +417,19 @@ body.dark-theme .history {
   background: rgb(100, 150, 220)
 }
 
+
+.logo {
+    margin-left: 25px;
+    margin-right: 40px;
+    transition: transform 0.2s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
 footer {
-    height: 200px;
+    height: 220px;
     background: rgb(0, 12, 31);
 }
 
@@ -455,4 +460,110 @@ footer {
 
 .footer-content a:hover {
     color: rgb(255, 179, 102);
+}
+
+.routes h1{
+    color: rgb(0, 31, 82);
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Font';
+    padding-top: 120px;
+}
+
+.card.text-bg-dark.text-end {
+    width: 420px;
+    height: 300px;
+    font-family: 'Font';
+    border: none;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    border-radius: 20px; 
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px !important;
+}
+
+.product {
+    font-family: 'Font';
+}
+
+.card-text,
+.card-title {
+    font-family: 'Font';
+}
+
+.btn.btn-primary.back-button{
+    font-family: 'Font';
+    background-color:rgb(230, 140, 50);
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn.btn-primary.btn-about {
+    background-color:rgb(230, 140, 50);
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn.btn-primary.back-button:hover,
+.btn.btn-primary.back-button:focus,
+.btn.btn-primary.back-button:active,
+.btn.btn-primary.btn-about:hover,
+.btn.btn-primary.btn-about:active,
+.btn.btn-primary.btn-about.focus,
+.btn.btn-primary.back-button.active {
+    background-color: rgb(230, 140, 50) !important;
+    border-color: rgb(230, 140, 50) !important;
+    box-shadow: none !important;      
+    color: #fff !important;
+}
+
+.btn.btn-primary.back-button:hover {
+    transform: scale(1.1);
+}
+
+.btn.btn-primary.back-button:active {
+    transform: scale(0.9) !important;
+}
+
+.btn.btn-primary.btn-about:hover {
+    transform: scale(1.05);
+}
+
+.btn.btn-primary.btn-about:active {
+    transform: scale(0.9) !important;
+}
+
+.btn-group {
+    font-family: 'Font';
+}
+
+.card-img-overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.d-block.mx-auto{
+    width:100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    border-radius: 8px;
+    padding: 1.5rem;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    font-family: 'Font';
+}
+
+.carousel-caption p{
+    padding-bottom: 1.5rem;
 }
