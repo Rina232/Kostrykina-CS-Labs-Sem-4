@@ -2,6 +2,12 @@
 import {ProductComponent} from "../../components/product/index.js";
 import {MainPage} from "../main/index.js";
 
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+
+import { calculateRouteScore, formatDestinations, checkDestinationHint } from '../../js/utils.js';
+
 export class ProductPage {
     constructor(parent, id) {
         this.parent = parent
@@ -25,8 +31,8 @@ export class ProductPage {
     }
 
     getData() {
-        if (this.id == 1) {
-            return {
+        const dataMap = {
+            1: {
                 id: 1,
                 src: "https://images.unsplash.com/photo-1526821799652-2dc51675628e?q=80&w=2156&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 title: "Франция",
@@ -35,10 +41,8 @@ export class ProductPage {
                     "Винные туры в регионы Бордо и Шампань. Лазурный берег, Прованс и Версаль.",
                     "Французская кухня, мода и искусство. Индивидуальные и групповые туры. От 45 000 ₽"
                 ]
-            }
-        }
-        if (this.id == 2) {
-            return {
+            },
+            2: {
                 id: 2,
                 src: "https://images.unsplash.com/photo-1570970168428-4e6347943681?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 title: "Италия",
@@ -47,10 +51,8 @@ export class ProductPage {
                     "Амальфитанское побережье и озёра Комо и Гарда. Настоящая итальянская кухня: пицца, паста, джелато.",
                     "Экскурсии, гастрономические и пляжные туры. От 42 000 ₽"
                 ]
-            }
-        }
-        if (this.id == 3) {
-            return {
+            },
+            3: {
                 id: 3,
                 src: "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 title: "Индонезия",
@@ -59,10 +61,8 @@ export class ProductPage {
                     "Тропические пляжи, сноркелинг и дайвинг. Уникальная культура, традиционные танцы и спа-ритуалы.",
                     "Пакетные и авторские туры. От 65 000 ₽"
                 ]
-            }
-        }
-        if (this.id == 4) {
-            return {
+            },
+            4: {
                 id: 4,
                 src: "https://plus.unsplash.com/premium_photo-1661963210464-73560a246e06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 title: "Япония",
@@ -71,10 +71,8 @@ export class ProductPage {
                     "Традиционные онсэны, суши-мастер-классы и технология будущего.",
                     "Безопасность, чистота и уникальная культура. От 75 000 ₽"
                 ]
-            }
-        }
-        if (this.id == 5) {
-            return {
+            },
+            5: {
                 id: 5,
                 src: "https://images.unsplash.com/photo-1569069438599-4b719f7463b4?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 title: "ОАЭ",
@@ -83,10 +81,8 @@ export class ProductPage {
                     "Сафари по пустыне, верблюжьи треки и ужин под звёздами. Абу-Даби с мечетью Шейха Зайда.",
                     "Роскошные отели, шопинг и круглогодичное солнце. От 38 000 ₽"
                 ]
-            }
-        }
-        if (this.id == 6) {
-            return {
+            },
+            6: {
                 id: 6,
                 src: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=1439&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 title: "Таиланд",
@@ -97,17 +93,14 @@ export class ProductPage {
                 ]
             }
         }
+        const selected = dataMap[this.id] || dataMap[1];
+        const commonModelPath = "../../models/Airplane.glb"
         return {
-            id: 1,
-            src: "https://images.unsplash.com/photo-1526821799652-2dc51675628e?q=80&w=2156&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            title: "Франция",
-            text: [
-                "Париж с Эйфелевой башней, Лувром и Нотр-Дамом.",
-                "Винные туры в регионы Бордо и Шампань. Лазурный берег, Прованс и Версаль.",
-                "Французская кухня, мода и искусство. Индивидуальные и групповые туры. От 45 000 ₽"
-            ]
-        }
+            ...selected,
+            model: commonModelPath
+        };
     }
+        
 
     get pageRoot() {
         return document.getElementById('product-page')
@@ -115,10 +108,74 @@ export class ProductPage {
 
     getHTML() {
         return (
-            `
+            `   
                 <div id="product-page"></div>
             `
         )
+    }
+
+    init3D(modelPath) {
+        const canvas = document.getElementById('viewer-canvas');
+        if (!canvas) return;
+
+        const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
+
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xe6ebf5);
+
+
+        const camera = new THREE.PerspectiveCamera(70, canvas.clientWidth / canvas.clientHeight, 0.1, 300);
+        camera.position.set(30, 50, 50);
+
+
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 1);
+        scene.add(ambientLight);
+        const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        dirLight.position.set(100, 100, 10);
+        scene.add(dirLight);
+
+        const loader = new GLTFLoader();
+        loader.load(modelPath, (gltf) => {
+            const model = gltf.scene;
+            const box = new THREE.Box3().setFromObject(model);
+            const center = box.getCenter(new THREE.Vector3());
+            model.position.x -= center.x;
+            model.position.y -= center.y;
+            model.position.z -= center.z;
+
+            scene.add(model);
+        }, undefined, (error) => {
+            console.error('Ошибка загрузки модели:', error);
+        });
+
+        document.getElementById('view-front').onclick = () => {
+            camera.position.set(0, 0, 70);
+            controls.target.set(0, 0, 0);
+            controls.update();
+        };
+        document.getElementById('view-back').onclick = () => {
+            camera.position.set(0, 0, -70);
+            controls.target.set(0, 0, 0);
+            controls.update();
+        };
+
+
+        const animate = () => {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        };
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = canvas.clientWidth / canvas.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
+        });
     }
 
     /*clickBack() {
@@ -139,5 +196,7 @@ export class ProductPage {
         const data = this.getData()
         const stock = new ProductComponent(this.pageRoot)
         stock.render(data)
+
+        this.init3D(data.model);
     }
 }

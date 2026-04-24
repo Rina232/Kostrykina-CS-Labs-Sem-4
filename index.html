@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Международный аэропорт | Маршруты</title>
@@ -8,38 +9,50 @@
 
     <link rel="icon" href="img/airport.png" type="image/png">
 </head>
+
 <body>
     <header>
-            <nav class="header-menu">
-                <a href="main-page.html" class="logo-link">
-                    <img class="logo" width="40" height="40" src="img/airport.png" alt="airport-building"/>
-                </a>
-                <ul>
-                    <li><a href="main-page.html"><span>Об аэропорте</span></a></li>
-                    <li><a href="calculator.html"><span>Расчет багажа</span></a></li>
-                    <li><a href="index.html" data-action="go-main"><span>Маршруты</span></a></li>
-                    <li><a href="author.html" class="end-href"><span>Об авторе</span></a></li>
-                </ul>
-            </nav>
-        </header>
-<div id="root"></div>
-<footer>
-            <div class="footer-content">
-                <a href="main-page.html" class="logo-link">
-                    <img class="logo" width="96" height="96" src="img/airport.png" alt="airport-building"/>
-                </a>
-                <ul>
-                    <li><a href="main-page.html"><span>Об аэропорте</span></a></li>
-                    <li><a href="calculator.html"><span>Расчет багажа</span></a></li>
-                    <li><a href="index.html" data-action="go-main"><span>Маршруты</span></a></li>
-                    <li><a href="author.html"><span>Об авторе</span></a></li>
-                </ul>
-            </div>
-        </footer>
-
-
-<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="main.js" type="module"></script>
-<script src="js/app.js" type="module" defer></script>
+        <nav class="header-menu">
+            <a href="main-page.html" class="logo-link">
+                <img class="logo" width="40" height="40" src="img/airport.png" alt="airport-building" />
+            </a>
+            <ul>
+                <li><a href="main-page.html"><span>Об аэропорте</span></a></li>
+                <li><a href="calculator.html"><span>Расчет багажа</span></a></li>
+                <li><a href="index.html" data-action="go-main"><span>Маршруты</span></a></li>
+                <li><a href="author.html" class="end-href"><span>Об авторе</span></a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div id="root"></div>
+    <footer>
+        <div class="footer-content">
+            <a href="main-page.html" class="logo-link">
+                <img class="logo" width="96" height="96" src="img/airport.png" alt="airport-building" />
+            </a>
+            <ul>
+                <li><a href="main-page.html"><span>Об аэропорте</span></a></li>
+                <li><a href="calculator.html"><span>Расчет багажа</span></a></li>
+                <li><a href="index.html" data-action="go-main"><span>Маршруты</span></a></li>
+                <li><a href="author.html"><span>Об авторе</span></a></li>
+            </ul>
+        </div>
+    </footer>
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/examples/jsm/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+    </script>
+    <script src="idb.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="detail.js" type="module"></script>
+    <script src="app.js" type="module"></script>
+    <script src="main.js" type="module"></script>
+    <script src="js/app.js" type="module" defer></script>
 </body>
+
 </html>

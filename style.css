@@ -567,3 +567,23 @@ footer {
 .carousel-caption p{
     padding-bottom: 1.5rem;
 }
+
+#viewer-canvas {
+    width: 100vw;
+    height: 70vh;
+    display: block;
+    background: #e6ebf5;
+    margin-top:-50px;
+}
+
+.back-link {
+    margin: 24px;
+    display: inline-block;
+    text-decoration: none;
+    color: #283655;
+    font-weight: 500;
+}
+
+#view-front, #view-back, #model-title {
+    font-family: 'Font';
+}
