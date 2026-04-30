@@ -541,6 +541,11 @@ footer {
     font-family: 'Font';
 }
 
+.btn.btn-info.play-button,
+.btn.btn-info.play-button:active  {
+    color: rgb(255, 255, 255);
+}
+
 .card-img-overlay {
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
     display: flex;
@@ -585,5 +590,20 @@ footer {
 }
 
 #view-front, #view-back, #model-title {
+    font-family: 'Font';
+}
+
+.table, .card-header{
+    font-family: 'Font';
+}
+
+.form-label,
+#check-guess,
+#skip-round,
+.fs-3.fw-bold.letter-spacing {
+    font-family: 'Font';
+}
+
+.badge {
     font-family: 'Font';
 }

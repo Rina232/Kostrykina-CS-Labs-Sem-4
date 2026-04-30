@@ -1,6 +1,7 @@
 import {ProductCardComponent} from "../../components/product-card/index.js";
 import {ProductPage} from "../product/index.js";
-import { ButtonGroupComponent } from "../../components/button-group/index.js";
+import {ButtonGroupComponent} from "../../components/button-group/index.js";
+import {MiniGamesPage} from "../../pages/game/index.js";
 
 export class MainPage {
     static cardsData = [
@@ -111,6 +112,11 @@ export class MainPage {
             this.render()
         }
     }
+
+    clickPlay() {
+        const gamesPage = new MiniGamesPage(this.parent);
+        gamesPage.render();
+    }
         
     render() {
         this.parent.innerHTML = ''
@@ -118,7 +124,7 @@ export class MainPage {
         this.parent.insertAdjacentHTML('beforeend', html)
 
         const ButtonGroup = new ButtonGroupComponent(this.buttonPageRoot)
-        ButtonGroup.render(this.clickAdd.bind(this), this.clickDelete.bind(this))
+        ButtonGroup.render(this.clickAdd.bind(this), this.clickDelete.bind(this), this.clickPlay.bind(this))
         
         const data = this.getData()
         data.forEach((item) => {

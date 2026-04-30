@@ -1,6 +1,7 @@
 {
   "name": "kostrykina-cs-labs-sem-4",
   "version": "1.0.0",
+  "type": "module",
   "description": "**Кострыкина Екатерина ИУ5-44Б**",
   "homepage": "https://github.com/Rina232/Kostrykina-CS-Labs-Sem-4#readme",
   "bugs": {
@@ -12,7 +13,6 @@
   },
   "license": "ISC",
   "author": "",
-  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
