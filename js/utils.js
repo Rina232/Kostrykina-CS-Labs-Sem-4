@@ -57,8 +57,3 @@ export function calculateAverage(arr) {
     const sum = arr.reduce((acc, val) => acc + val, 0);
     return Math.round((sum / arr.length) * 10) / 10; 
 }
-
-console.log(calculateDiagonalSum([[1, 1, 1],
-                                [2, 2, 2],
-                                [3, 3, 3]]
-))
