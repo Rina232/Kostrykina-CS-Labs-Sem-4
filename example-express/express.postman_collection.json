@@ -1,0 +1,151 @@
+{
+  "info": {
+    "_postman_id": "2ac0039b-a753-485c-9aa8-2e5c1739b414",
+    "name": "express",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "26376110"
+  },
+  "item": [
+    {
+      "name": "get_all",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/stocks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "stocks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "new_item",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"src\": \"https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\r\n  \"title\": \"Индия\",\r\n  \"text\": \"Тадж-Махал, Гоа, яркие фестивали и древняя культура. От 52 000 ₽\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/stocks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "stocks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get_by_id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/stocks/5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "stocks",
+            "5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/stocks/7",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "stocks",
+            "7"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get_by_filter",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/stocks?title=Япония",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "stocks"
+          ],
+          "query": [
+            {
+              "key": "title",
+              "value": "Япония"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "    {\r\n        \"title\": \"Тайланд\"\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/stocks/6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "stocks",
+            "6"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
