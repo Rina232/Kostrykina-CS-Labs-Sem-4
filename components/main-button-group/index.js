@@ -1,4 +1,4 @@
-export class ButtonGroupComponent {
+export class MainButtonGroupComponent {
     constructor(parent) {
         this.parent = parent;
     }
@@ -16,8 +16,8 @@ export class ButtonGroupComponent {
         return (
             `   
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                    <button id="add-button" type="button" class="btn btn-success add-button">Добавить</button>
-                    <button id="delete-button" type="button" class="btn btn-danger delete-button">Удалить</button>
+                    <button id="add-button" type="button" class="btn btn-success add-button">Добавить новый</button>
+                    <button id="delete-button" type="button" class="btn btn-danger delete-button">Удалить последний</button>
                 </div>
             `
         )

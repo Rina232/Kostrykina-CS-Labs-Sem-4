@@ -1,117 +1,77 @@
-# ЛР 3. Простое веб-приложение. Верстка
+# ЛР 5. Добаление AJAX запросов к API
 
 **Кострыкина Екатерина ИУ5-44Б**
 
 ## Содержание <!-- omit in toc -->
 
 - [Цель работы](#цель-данной-лабораторной-работы)
-- [Тема](#тема-регистрация-авиабагажа)
+- [Тема](#тема-онлайн-табло-аэропорта)
 - [Сайт для вдохновения](#сайт-для-вдохновения-аэропорт-внуково)
 - [Дополнительные задания](#дополнительные-задания)
-- [План](#план)
+- [План лабораторной работы](#план-лабораторной-работы)
 - [Задание](#задание)
 
-## Цель данной лабораторной работы 
-Знакомство с node, npm, написание простого приложения на JavaScript. В ходе выполнения работы, вам предстоит ознакомиться с кодом реализации простого интерфейса и вывода данных, и затем выполнить задания по варианту.
+## Цель данной лабораторной работы
 
-### Тема: Регистрация авиабагажа
- 
-### Сайт для вдохновения: [Аэропорт Внуково](https://www.vnukovo.ru/ru/?utm_source=google.com&utm_medium=organic&utm_campaign=google.com&utm_referrer=google.com)
+Цель данной лабораторной работы - взаимодействие с внешним API через XMLHttpRequest. В ходе выполнения работы, вам предстоит ознакомиться с кодом реализации простого взаимодействия с внешним API, получение данных и вывод их в интерфейс пользователя, и затем выполнить задания по варианту.
 
-## Дополнительные задания:
-1. Добавить шапку сайта с прошлой лабораторной работы
-   ``` html
-       <header>
-            <nav class="header-menu">
-                <a href="main-page.html" class="logo-link">
-                    <img class="logo" width="40" height="40" src="img/airport.png" alt="airport-building"/>
-                </a>
-                <ul>
-                    <li><a href="main-page.html"><span>Об аэропорте</span></a></li>
-                    <li><a href="calculator.html"><span>Расчет багажа</span></a></li>
-                    <li><a href="index.html" data-action="go-main"><span>Маршруты</span></a></li>
-                    <li><a href="author.html" class="end-href"><span>Об авторе</span></a></li>
-                </ul>
-            </nav>
-        </header>
-   ```
+### Тема: Онлайн-табло аэропорта
 
-2. Реализовать переход по кнопке "Маршруты"
+### Сайт для вдохновения: [Аэропорт Внуково](https://www.vnukovo.ru/)
+
+## Дополнительные задания
+
+1. Разобраться в отличиях `XMLHttpRequest` и `fetch`
    ```javascript
-    bindBackButton() { 
-        const routesLinks = document.querySelectorAll('a[data-action="go-main"]');
-        
-        routesLinks.forEach(link => {
-            const newLink = link.cloneNode(true);
-            link.replaceWith(newLink);
-            
-            newLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                const mainPage = new MainPage(this.parent);
-                mainPage.render();
-            });
-        });
-    }
+   // XMLHttpRequest
+   const xhr = new XMLHttpRequest();
+
+   xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts');
+
+   xhr.onload = function () {
+       if (xhr.status === 200) {
+           console.log(JSON.parse(xhr.responseText));
+       }
+   };
+
+   xhr.send();
    ```
-3. На странице продукта заменить карточки на карусель
-    ``` javascript
-        getHTML(data) {
-        return (
-            `   
-                <div id="carouselExampleCaptions" class="carousel slide mx-auto" style="width: 1000px; height: 500px; margin: 90px auto 50px auto !important;">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                        <img src="${data.src}" class="d-block mx-auto" alt="картинка">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>${data.title}</h5>
-                            <p>${data.text[0]}</p>
-                        </div>
-                        </div>
-                        <div class="carousel-item">
-                        <img src="${data.src}" class="d-block mx-auto" alt="картинка">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>${data.title}</h5>
-                            <p>${data.text[1]}</p>
-                        </div>
-                        </div>
-                        <div class="carousel-item">
-                        <img src="${data.src}" class="d-block mx-auto" alt="картинка">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>${data.title}</h5>
-                            <p>${data.text[2]}</p>
-                        </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Предыдущий</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Следующий</span>
-                    </button>
-                </div>
-            `
-        )
-    }
-    ```
 
-## План
+   ```javascript
+   // fetch
+   fetch('https://jsonplaceholder.typicode.com/posts')
+       .then(response => response.json())
+       .then(data => console.log(data))
+       .catch(error => console.error(error));
+   ```
 
-1. Инструменты для работы
-2. Что такое node, npm и package.json
-3. Как работать с html в JS
-4. Инициализация проекта
-5. Создание главной страницы, подключение bootstrap
-6. Простая кнопка на JavaScript
-7. Структурирование проекта
-8. Верстка главной страницы
-9. Верстка страницы продукта
+2. Добавить индикатор загрузки данных
+   ```javascript
+   showLoader() {
+       const loader = document.createElement('div');
 
-## Задание 
-Знакомство с node, npm. Верстка интерфейса с карточками (страница списка с фильтрацией и страница подробнее), данные получать через mock объекты (коллекция). Добавить кнопку добавления (копировать первую карточку), кнопку удаления карточки. В хедере на обеих страницах должна быть кнопка Домой
+       loader.className = 'spinner-border text-primary';
+       loader.role = 'status';
+
+       loader.innerHTML = `
+           <span class="visually-hidden">
+               Loading...
+           </span>
+       `;
+
+       document.body.append(loader);
+   }
+  
+
+## План лабораторной работы
+
+1. Инструменты для работы.
+2. Что такое XMLHttpRequest.
+3. Работа с API.
+4. API главной страницы с карточками.
+5. API страницы карточки.
+6. Дополнительные материалы.
+
+## Задание
+
+Продолжение Лабораторной работы 3: добавить страницу добавления/редактирования и соответствующие кнопки, подключение к созданному API бэкенду. Запросы XHR, Cors обойти через расширение браузера CORS Unblock. Код 4ой лабораторной НЕ НУЖНО добавлять в ветку по 5ой, в 5ой и 6ой остается только фронтенд, как в 3ей.

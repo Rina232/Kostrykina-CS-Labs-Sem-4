@@ -6,7 +6,7 @@ export class ProductComponent {
     getHTML(data) {
         return (
             `   
-                <div id="carouselExampleCaptions" class="carousel slide mx-auto" style="width: 1000px; height: 500px; margin: 90px auto 50px auto !important;">
+                <div id="carouselExampleCaptions" class="carousel slide mx-auto" style="width: 1000px; height: 500px; margin: 10px auto 50px auto !important;">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -14,24 +14,24 @@ export class ProductComponent {
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                        <img src="${data.src}" class="d-block mx-auto" alt="картинка">
+                        <img src="${data.srcDetail}" class="d-block mx-auto" alt="картинка">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>${data.title}</h5>
-                            <p>${data.text[0]}</p>
+                            <p>${data.description[0]}</p>
                         </div>
                         </div>
                         <div class="carousel-item">
-                        <img src="${data.src}" class="d-block mx-auto" alt="картинка">
+                        <img src="${data.srcDetail}" class="d-block mx-auto" alt="картинка">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>${data.title}</h5>
-                            <p>${data.text[1]}</p>
+                            <p>${data.description[1]}</p>
                         </div>
                         </div>
                         <div class="carousel-item">
-                        <img src="${data.src}" class="d-block mx-auto" alt="картинка">
+                        <img src="${data.srcDetail}" class="d-block mx-auto" alt="картинка">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>${data.title}</h5>
-                            <p>${data.text[2]}</p>
+                            <p>${data.description[2]}</p>
                         </div>
                         </div>
                     </div>
