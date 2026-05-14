@@ -1,38 +1,74 @@
 [
   {
     "id": 1,
-    "src": "https://images.unsplash.com/photo-1431274172761-fca41d930114?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": "Франция",
-    "text": "Париж, Эйфелева башня и невероятная кухня. От 45 000 ₽"
+    "src": "https://images.unsplash.com/photo-1431274172761-fca41d930114?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "srcDetail": "https://images.unsplash.com/photo-1526821799652-2dc51675628e?q=80&w=2156&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "text": "Париж, Эйфелева башня и невероятная кухня. От 45 000 ₽",
+    "description": [
+      "Париж с Эйфелевой башней, Лувром и Нотр-Дамом.",
+      "Винные туры в регионы Бордо и Шампань. Лазурный берег, Прованс и Версаль.",
+      "Французская кухня, мода и искусство. Индивидуальные и групповые туры."
+    ]
   },
   {
     "id": 2,
-    "src": "https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?q=80&w=1467&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": "Италия",
-    "text": "Венеция, Рим и Колизей. Гастрономические туры. От 42 000 ₽"
+    "src": "https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?q=80&w=1467&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "srcDetail": "https://images.unsplash.com/photo-1570970168428-4e6347943681?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "text": "Венеция, Рим и Колизей. Гастрономические туры. От 42 000 ₽",
+    "description": [
+      "Рим с Колизеем и Ватиканом, романтическая Венеция, Флоренция.",
+      "Амальфитанское побережье и озёра Комо и Гарда.",
+      "Настоящая итальянская кухня: пицца, паста, джелато."
+    ]
   },
   {
     "id": 3,
-    "src": "https://plus.unsplash.com/premium_photo-1730035378601-e4b6183f3398?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": "Индонезия",
-    "text": "Бали - райские пляжи и экзотика. От 65 000 ₽"
+    "src": "https://plus.unsplash.com/premium_photo-1730035378601-e4b6183f3398?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "srcDetail": "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "text": "Бали - райские пляжи и экзотика. От 65 000 ₽",
+    "description": [
+      "Остров Бали: храмы Улувату и Танах Лот.",
+      "Рисовые террасы Тегалаланг и вулкан Батур.",
+      "Дайвинг, сноркелинг, спа и тропическая культура."
+    ]
   },
   {
     "id": 4,
-    "src": "https://images.unsplash.com/photo-1620149327305-791a9fe17111?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": "Япония",
-    "text": "Токио, Киото, сакура и древние храмы. От 75 000 ₽"
+    "src": "https://images.unsplash.com/photo-1620149327305-791a9fe17111?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "srcDetail": "https://plus.unsplash.com/premium_photo-1661963210464-73560a246e06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "text": "Токио, Киото, сакура и древние храмы. От 75 000 ₽",
+    "description": [
+      "Современный Токио и древний Киото.",
+      "Сезон сакуры и осенние клёны.",
+      "Онсэны, суши и технологическая культура."
+    ]
   },
   {
     "id": 5,
-    "src": "https://images.unsplash.com/photo-1544092683-c0c9ebb368e5?q=80&w=1451&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": "ОАЭ",
-    "text": "Дубай - роскошь и современные чудеса. От 38 000 ₽"
+    "src": "https://images.unsplash.com/photo-1544092683-c0c9ebb368e5?q=80&w=1451&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "srcDetail": "https://images.unsplash.com/photo-1569069438599-4b719f7463b4?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "text": "Дубай - роскошь и современные чудеса. От 38 000 ₽",
+    "description": [
+      "Дубай: Бурдж-Халифа и искусственные острова.",
+      "Сафари по пустыне и вечер под звёздами.",
+      "Абу-Даби и мечеть Шейха Зайда."
+    ]
   },
   {
     "id": 6,
-    "src": "https://plus.unsplash.com/premium_photo-1661962958462-9e52fda9954d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "title": "Тайланд",
-    "text": "Бангкок, Пхукет, тропики и буддийские храмы. От 48 000 ₽"
+    "title": "Таиланд",
+    "src": "https://plus.unsplash.com/premium_photo-1661962958462-9e52fda9954d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "srcDetail": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=1439&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "text": "Бангкок, Пхукет, тропики и буддийские храмы. От 48 000 ₽",
+    "description": [
+      "Бангкок и Великий дворец.",
+      "Пхукет, Самуи и острова.",
+      "Тайский массаж, рынки и природа."
+    ]
   }
 ]
