@@ -96,6 +96,7 @@ class Ajax {
         }
     }
 }
+```
 
 export const ajax = new Ajax()
 
