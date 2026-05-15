@@ -96,9 +96,9 @@ class Ajax {
         }
     }
 }
-```
 
 export const ajax = new Ajax()
+```
 
 ## План лабораторной работы
 
