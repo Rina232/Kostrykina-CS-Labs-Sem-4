@@ -27,7 +27,7 @@
 
 ## Дополнительные задания
 
-1. Переделаны запросы с использованием async/await и fetch вместо XMLHttpRequest.
+1. Переделать запросы через async/await и fetch вместо XMLHttpRequest.
 ```js
 class Ajax {
     async get(url, callback) {
