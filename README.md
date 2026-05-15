@@ -1,77 +1,113 @@
-# ЛР 5. Добаление AJAX запросов к API
+# ЛР №6. Знакомство с promise и fetch, сборка клиентской части
 
 **Кострыкина Екатерина ИУ5-44Б**
 
 ## Содержание <!-- omit in toc -->
 
 - [Цель работы](#цель-данной-лабораторной-работы)
-- [Тема](#тема-онлайн-табло-аэропорта)
-- [Сайт для вдохновения](#сайт-для-вдохновения-аэропорт-внуково)
+- [Тема](#тема)
+- [Сайт для вдохновения](#сайт-для-вдохновения)
 - [Дополнительные задания](#дополнительные-задания)
-- [План лабораторной работы](#план-лабораторной-работы)
+- [План](#план)
 - [Задание](#задание)
 
 ## Цель данной лабораторной работы
 
-Цель данной лабораторной работы - взаимодействие с внешним API через XMLHttpRequest. В ходе выполнения работы, вам предстоит ознакомиться с кодом реализации простого взаимодействия с внешним API, получение данных и вывод их в интерфейс пользователя, и затем выполнить задания по варианту.
+Лабораторная состоит из 2-х частей:
 
-### Тема: Онлайн-табло аэропорта
+Первая часть данной лабораторной работы заключается в изменении механизма взаимодействия с внешним API: в прошлой лабораторной работе использовался XMLHttpRequest, в этой - современный метод fetch. В ходе выполнения работы предстоит познакомиться с кратким полезным теоретическим материалом, кодом реализации простого взаимодействия с внешним API, получением данных и выводом их в интерфейс пользователя, и выполнить задания по варианту.
 
-### Сайт для вдохновения: [Аэропорт Внуково](https://www.vnukovo.ru/)
+Вторая часть лабораторной работы заключается в сборке клиентской части приложения: необходимо "сбилдить" клиентскую часть (ЛР №3) с помощью системы сборки, а также добавить в серверную часть (ЛР №4) возможность раздачи клиентской части в качестве статики во избежание проблем с CORS.
+
+## Тема
+Онлайн-табло аэропорта
+
+## Сайт для вдохновения
+[Аэропорт Внуково](https://www.vnukovo.ru/)
 
 ## Дополнительные задания
 
-1. Разобраться в отличиях `XMLHttpRequest` и `fetch`
-   ```javascript
-   // XMLHttpRequest
-   const xhr = new XMLHttpRequest();
+1. Переделаны запросы с использованием async/await и fetch вместо XMLHttpRequest.
+```js
+class Ajax {
+    async get(url, callback) {
+        try {
+            const response = await fetch(url)
 
-   xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts');
+            const data = await response.json()
 
-   xhr.onload = function () {
-       if (xhr.status === 200) {
-           console.log(JSON.parse(xhr.responseText));
-       }
-   };
+            callback(data, response.status)
+        } catch (e) {
+            console.error(e)
+            callback(null, 500)
+        }
+    }
 
-   xhr.send();
-   ```
+    async post(url, data, callback) {
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
 
-   ```javascript
-   // fetch
-   fetch('https://jsonplaceholder.typicode.com/posts')
-       .then(response => response.json())
-       .then(data => console.log(data))
-       .catch(error => console.error(error));
-   ```
+            const result = await response.json()
 
-2. Добавить индикатор загрузки данных
-   ```javascript
-   showLoader() {
-       const loader = document.createElement('div');
+            callback(result, response.status)
+        } catch (e) {
+            console.error(e)
+            callback(null, 500)
+        }
+    }
 
-       loader.className = 'spinner-border text-primary';
-       loader.role = 'status';
+    async patch(url, data, callback) {
+        try {
+            const response = await fetch(url, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
 
-       loader.innerHTML = `
-           <span class="visually-hidden">
-               Loading...
-           </span>
-       `;
+            const result = await response.json()
 
-       document.body.append(loader);
-   }
-  
+            callback(result, response.status)
+        } catch (e) {
+            console.error(e)
+            callback(null, 500)
+        }
+    }
+
+    async delete(url, callback) {
+        try {
+            const response = await fetch(url, {
+                method: 'DELETE'
+            })
+
+            const data = await response.json()
+
+            callback(data, response.status)
+        } catch (e) {
+            console.error(e)
+            callback(null, 500)
+        }
+    }
+}
+
+export const ajax = new Ajax()
 
 ## План лабораторной работы
 
-1. Инструменты для работы.
-2. Что такое XMLHttpRequest.
-3. Работа с API.
-4. API главной страницы с карточками.
-5. API страницы карточки.
-6. Дополнительные материалы.
+1. Введение в Promise.
+2. Использование Promise.
+3. Что такое async await в JS
+4. Пояснение про fetch и пример использования.
+5. Сборка клиентской части через Vite.
+6. Раздача фронтенда в качестве статики
 
 ## Задание
 
-Продолжение Лабораторной работы 3: добавить страницу добавления/редактирования и соответствующие кнопки, подключение к созданному API бэкенду. Запросы XHR, Cors обойти через расширение браузера CORS Unblock. Код 4ой лабораторной НЕ НУЖНО добавлять в ветку по 5ой, в 5ой и 6ой остается только фронтенд, как в 3ей.
+Замена коллбеков на промисы, запросы fetch. Сборка клиентской части через bundler, развертывание собранного фронтенда на сервере с API. Ветка по 6-ой лабораторной остается только с файлами исходного кода, а собранный bundle добавляется в ветку по 4-ой лабораторной.
